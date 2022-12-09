@@ -1,0 +1,46 @@
+<h2>
+  Lista de productos
+</h2>
+{{#if productos.length}}
+  <table class='table table-sm table-hover'>
+    <caption>
+      Lista de todos los productos
+    </caption>
+    <thead>
+      <tr>
+        <th scope='col'>
+          #ID
+        </th>
+        <th scope='col'>
+          Nombre
+        </th>
+        <th scope='col'>
+          Precio
+        </th>
+
+      </tr>
+    </thead>
+    <tbody>
+      {{#each productos}}
+        <tr>
+          <td>
+            {{this.id}}
+          </td>
+          <td>
+            {{this.title}}
+          </td>
+          <td>
+            {{this.price}}
+          </td>
+          <td>
+            <img src={{this.thumbnail}} width='100' height='100' />
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+{{else}}
+  <h2>
+    No hay prodcutos
+  </h2>
+{{/if}}
